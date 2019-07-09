@@ -1,4 +1,4 @@
-# Reverse an Array
+# Reverse an Array - 7/9/19
 
 This first challenge in the python 401 makes use of the python slice method to reverse an array.
 
