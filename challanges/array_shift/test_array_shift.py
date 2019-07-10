@@ -1,7 +1,7 @@
 from .array_shift import insert_shift_array
 
 def test_insert_shift_array_exsist(): 
-  assert insert_shift_array
+  assert insert_shift_array([1],2)
 
 def test_insert_shift_array_happy_path(): 
   
