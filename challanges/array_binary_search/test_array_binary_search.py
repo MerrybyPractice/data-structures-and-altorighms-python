@@ -17,7 +17,7 @@ def test_array_binary_search_happy_path():
 
   actual = binary_search(lst, key)
 
-  expected = actual
+  assert expected == actual
 
 def test_array_binary_search_uneven_array(): 
   expected = 0
@@ -27,7 +27,7 @@ def test_array_binary_search_uneven_array():
 
   actual = binary_search(lst, key)
 
-  expected = actual
+  assert expected == actual
 
 def test_array_binary_search_empty_array(): 
   expected = -1 
@@ -37,7 +37,7 @@ def test_array_binary_search_empty_array():
 
   actual = binary_search(lst, key)
 
-  expected = actual 
+  assert expected == actual 
 
 def test_array_binary_search_not_in_array(): 
   expected = -1
@@ -47,4 +47,4 @@ def test_array_binary_search_not_in_array():
 
   actual = binary_search(lst, key)
 
-  expected = actual
+  assert expected == actual
