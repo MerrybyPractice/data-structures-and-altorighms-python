@@ -4,8 +4,8 @@ def binary_search(lst, key):
     if lst[mid] == key: 
       return lst.index(lst[mid])
     elif lst[mid] > key: 
-      binary_search(lst[:mid:], key)
+      return binary_search(lst[:mid], key) 
     elif lst[mid] < key: 
-      binary_search(lst[mid::], key)
+      return binary_search(lst[mid:], key) + len(lst[:mid])
   except IndexError: 
     return -1  

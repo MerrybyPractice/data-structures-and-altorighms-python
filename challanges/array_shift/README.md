@@ -14,4 +14,3 @@ While python has a native insert function, by avoiding it this solution is actua
 ## Solution
 
 ![shift_array_whiteboard](../../assets/arrayShift.jpeg)
-
