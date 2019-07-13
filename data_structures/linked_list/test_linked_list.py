@@ -2,22 +2,93 @@ from .linked_list import LinkedList
 from .linked_list import Node
 
 def test_linked_list_exsists(): 
+
   assert LinkedList()
 
 def test_node_exsists(): 
-  assert Node()
+
+  assert Node(0)
 
 def test_linked_list_head_instantiates_as_none(): 
   ll = LinkedList() 
+
   assert ll.head == None 
 
+def test_node_insert(): 
+  ll = LinkedList()
+  ll.insert(1)
+
+  assert ll.head.value == 1
+  assert ll.head.next == None
+
+def test_node_insert_seccond_node(): 
+  ll = LinkedList()
+  ll.insert(1)
+  ll.insert(2)
+
+  assert ll.head.value == 2
+  assert ll.head.next.value == 1
+  assert ll.head.next.next == None
 
 
-"""
-Can properly insert into the linked list
-The head property will properly point to the first node in the linked list
-Can properly insert multiple nodes into the linked list
-Will return true when finding a value within the linked list that exists
-Will return false when searching for a value in the linked list that does not exist
-Can properly return a collection of all the values that exist in the linked list
-"""
+def test_node_insert_many_node(): 
+  ll = LinkedList()
+  ll.insert(1)
+  ll.insert(2)
+  ll.insert(3)
+
+  assert ll.head.value == 3
+  assert ll.head.next.value == 2
+  assert ll.head.next.next.value == 1
+  assert ll.head.next.next.next == None
+
+def test_includes(): 
+  ll = LinkedList()
+  ll.insert(1)
+  ll.insert(2)
+  ll.insert(3)
+
+  assert ll.includes(1) is True
+
+
+
+def test_does_not_include(): 
+  ll = LinkedList()
+  ll.insert(1)
+  ll.insert(2)
+  ll.insert(3)
+
+  assert ll.includes(357) is False
+
+def test_includes_at_head(): 
+  ll = LinkedList()
+  ll.insert(1)
+  ll.insert(2)
+  ll.insert(3)
+
+  assert ll.includes(3) is True
+
+def test_to_string(): 
+  ll = LinkedList()
+  ll.insert(1)
+  ll.insert(2)
+  ll.insert(3)
+
+  stringify = str(ll)
+
+  assert stringify == "3 > 2 > 1"
+
+def test_to_string_single_node(): 
+  ll = LinkedList()
+  ll.insert(1)  
+
+  stringify = str(ll)
+
+  assert stringify == "1"
+
+def test_to_string_emtpy_list(): 
+   ll = LinkedList() 
+
+   stringify = str(ll)
+
+   assert stringify == ""
