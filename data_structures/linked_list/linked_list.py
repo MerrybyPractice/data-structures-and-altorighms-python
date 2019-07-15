@@ -13,7 +13,6 @@ class LinkedList:
       current = self.head
 
       while current != None: 
-          print(current.value, value)
 
           if current.value == value: 
             return True
@@ -34,7 +33,7 @@ class LinkedList:
     return return_string  
 
 class Node: 
-  
+
   def __init__(self, value, next = None): 
     self.value = value
     self.next = next
