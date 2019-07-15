@@ -92,3 +92,52 @@ def test_to_string_emtpy_list():
    stringify = str(ll)
 
    assert stringify == ""
+
+def test_append(): 
+
+  ll = LinkedList() 
+
+  ll.insert(1)
+  ll.insert(2)
+  ll.insert(3)  
+
+  ll.append(0) 
+
+  assert ll.head.next.next.next.value == 0
+
+def test_append_multiple(): 
+  ll = LinkedList() 
+
+  ll.insert(1)
+
+  ll.append(2)
+  ll.append(3)
+
+  assert ll.head.next.next.value == 3
+
+def test_insert_before_at_begining(): 
+  ll = LinkedList() 
+
+  ll.insert(1) 
+
+  ll.insert_before(1,0)
+
+  assert ll.head.value == 0
+
+def test_insert_before_at_mid(): 
+  ll = LinkedList()
+
+  ll.insert(1) 
+  ll.insert(3) 
+
+  ll.insert_before(3,2) 
+
+  assert ll.head.next.value == 2
+
+
+"""
+   Can successfully insert a node before a node located i the middle of a linked list
+   Can successfully insert a node before the first node of a linked list
+   Can successfully insert after a node in the middle of the linked list
+   Can successfully insert a node after the last node of the linked list
+   """
