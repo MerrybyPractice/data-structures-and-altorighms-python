@@ -24,3 +24,25 @@ Over all, adding Nodes to this list will take O(1) time and space, and finding a
     '3 > 2 > 1'
 
 * class Node - This class allows for the instantiation of a Node with a passed in value, and a next that can default to none or be passed in as well. This class is utilized in many of the methods on the LinkedList class.
+
+## Challenge Summary
+
+Write a append, insert before, and insert after method to compliment the existing linked list class.
+
+### Challenge Description 
+
+Write the following methods on the linked list class: 
+    * append - which takes in a value, inserts a new node of that value at the end of the list
+    * insert before - which takes in a search value and a new value, finds the search value, and inserts a new node of the new value before the node of the search value 
+    * insert after - which takes in a search value and a new value, finds the search value, and inserts a new node of the new value after the node of the search value
+
+
+### Approach & Efficiency Of the Insertion Challenge
+
+    For all of these methods I opted to do my list traversals with while loops, checking the value of the current node against the insertion criteria. Because of this, they should all take O(n) time. After that, it was simply a matter of rearranging pointers to insert the new node, which means their space is O(1)! 
+
+### Solution
+
+My partner for this challenge and I for this challenge each white-boarded out different functions, here is my solution to insert_after: 
+
+![white board for insert before](../../assets/insert_node_before.jpg)
