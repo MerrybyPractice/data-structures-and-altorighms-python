@@ -73,7 +73,30 @@ class LinkedList:
       
       current.next = Node(new_val, current.next) 
 
-        
+  def kth_from_the_end(self, k): 
+    
+    current = self.head 
+    total = 0
+
+    while current: 
+      current = current.next 
+      total += 1
+    
+    if k > total: 
+      return
+
+    idx = total - k - 1 
+
+    current = self.head
+
+    for i in range(idx): 
+
+      current = current.next
+    if current:   
+      return current.value  
+    else: 
+      return   
+
     
       
 

@@ -103,7 +103,6 @@ def test_append():
 
   ll.append(0) 
 
-  #print(ll.head.next.next.value)
   assert ll.head.next.next.next.value == 0
 
 def test_append_multiple(): 
@@ -114,7 +113,6 @@ def test_append_multiple():
   ll.append(2)
   ll.append(3)
 
-  print(ll.head.next.value)
   assert ll.head.next.next.value == 3
 
 def test_insert_before_at_begining(): 
@@ -134,7 +132,6 @@ def test_insert_before_at_mid():
 
   ll.insert_before(1,2) 
 
-  print(ll.head.next.value)
   assert ll.head.next.value == 2
 
 def test_insert_after_at_mid(): 
@@ -145,7 +142,6 @@ def test_insert_after_at_mid():
 
   ll.insert_after(3, 2) 
 
-  print(str(ll))
   assert ll.head.next.value == 2
 
 def test_insert_after_at_end(): 
@@ -156,9 +152,47 @@ def test_insert_after_at_end():
   
   ll.insert_after(1, 3)
 
-  print(ll.head.next.next.value)
   assert ll.head.next.next.value == 3
 
-"""
-    Can successfully insert a node after the last node of the linked list
-    """
+def test_kth_from_the_end_happy_path(): 
+  ll = LinkedList() 
+
+  ll.insert(1) 
+  ll.insert(2) 
+  ll.insert(3) 
+
+  assert ll.kth_from_the_end(1) == 2
+
+def test_kth_from_the_end_size_one(): 
+  ll = LinkedList() 
+
+  ll.insert(1) 
+
+  assert ll.kth_from_the_end(0) == 1
+
+def test_kth_from_the_end_negative(): 
+  ll = LinkedList() 
+
+  ll.insert(1) 
+  ll.insert(2) 
+  ll.insert(3) 
+
+  assert ll.kth_from_the_end(-1) == None
+
+def test_kth_from_the_end_same_length(): 
+  ll = LinkedList() 
+
+  ll.insert(1)
+  ll.insert(2) 
+  ll.insert(3) 
+
+  assert ll.kth_from_the_end(3) == 3
+
+def test_kth_from_the_end_k_greater(): 
+  ll = LinkedList() 
+
+  ll.insert(1) 
+  ll.insert(2) 
+  ll.insert(3) 
+
+  assert ll.kth_from_the_end(5) == None
