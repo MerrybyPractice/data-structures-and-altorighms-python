@@ -103,6 +103,7 @@ def test_append():
 
   ll.append(0) 
 
+  #print(ll.head.next.next.value)
   assert ll.head.next.next.next.value == 0
 
 def test_append_multiple(): 
@@ -113,13 +114,14 @@ def test_append_multiple():
   ll.append(2)
   ll.append(3)
 
+  print(ll.head.next.value)
   assert ll.head.next.next.value == 3
 
 def test_insert_before_at_begining(): 
   ll = LinkedList() 
 
   ll.insert(1) 
-
+  
   ll.insert_before(1,0)
 
   assert ll.head.value == 0
@@ -130,14 +132,33 @@ def test_insert_before_at_mid():
   ll.insert(1) 
   ll.insert(3) 
 
-  ll.insert_before(3,2) 
+  ll.insert_before(1,2) 
 
+  print(ll.head.next.value)
   assert ll.head.next.value == 2
 
+def test_insert_after_at_mid(): 
+  ll = LinkedList() 
+
+  ll.insert(1) 
+  ll.insert(3)
+
+  ll.insert_after(3, 2) 
+
+  print(str(ll))
+  assert ll.head.next.value == 2
+
+def test_insert_after_at_end(): 
+  ll = LinkedList() 
+
+  ll.insert(1) 
+  ll.insert(2)
+  
+  ll.insert_after(1, 3)
+
+  print(ll.head.next.next.value)
+  assert ll.head.next.next.value == 3
 
 """
-   Can successfully insert a node before a node located i the middle of a linked list
-   Can successfully insert a node before the first node of a linked list
-   Can successfully insert after a node in the middle of the linked list
-   Can successfully insert a node after the last node of the linked list
-   """
+    Can successfully insert a node after the last node of the linked list
+    """

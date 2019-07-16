@@ -1,9 +1,3 @@
-"""
-Streatch Goal doubbly linked***   
-  .append(value) which adds a new node with the given value to the end of the list
-  .insertBefore(value, newVal) which add a new node with the given newValue immediately before the first value node
-  .insertAfter(value, newVal) which add a new node with the given newValue immediately after the first value node
-"""
 class LinkedList: 
 
   def __init__(self): 
@@ -36,25 +30,52 @@ class LinkedList:
     return return_string  
 
   def append(self, value): 
+
     current = self.head 
 
-    while current != None: 
-      current = current.next
-      if current.next == None: 
-        insert = Node(value) 
-        current.next = insert
-        
+    while current.next != None: 
+      
+      current = current.next  
+
+    insert = Node(value) 
+
+    current.next = insert  
+
   def insert_before(self, value, new_val): 
+
     current = self.head 
 
-    while current != value: 
-      current = current.next 
-      if current.next.value == value:
-        insert = Node(value) 
-        holding = current.next
-        current.next = insert 
-        insert.next = holding
+    try: 
+      if current.value != value: 
+        while current.next.value != value: 
+        
+          current = current.next     
 
+        insert = Node(new_val, current.next) 
+        current.next = insert
+      else: 
+        insert = Node(new_val, current)  
+
+        self.head = insert
+      
+
+    except AttributeError: 
+      print(value, " not found in this Linked List")      
+
+  def insert_after(self, value, new_val): 
+    
+    current = self.head 
+    
+    while current.value != value: 
+      current = current.next 
+      
+    if current.value == value: 
+      
+      current.next = Node(new_val, current.next) 
+
+        
+    
+      
 
 class Node: 
 
