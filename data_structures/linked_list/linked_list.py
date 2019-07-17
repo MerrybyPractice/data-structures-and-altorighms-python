@@ -97,9 +97,6 @@ class LinkedList:
     else: 
       return   
 
-    
-      
-
 class Node: 
 
   def __init__(self, value, next = None): 
