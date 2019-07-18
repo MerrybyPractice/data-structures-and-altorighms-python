@@ -15,4 +15,16 @@ def test_merge_lists():
   ll_2.insert(4) 
   ll_2.insert(6) 
 
-  assert merge_lists(ll_1, ll_2).value == 5
+  
+
+  test_list_head = merge_lists(ll_1, ll_2)
+
+  assert test_list_head.value == 5
+  assert test_list_head.next.value == 6
+  assert test_list_head.next.next.next.next.value == 2
+
+
+
+
+ 
+  

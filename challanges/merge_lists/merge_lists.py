@@ -1,6 +1,6 @@
 from data_structures.linked_list.linked_list import LinkedList
 
-def merge_lists(self, ll_1, ll_2):     
+def merge_lists(ll_1, ll_2):     
     current_1 = ll_1.head 
     current_2 = ll_2.head
 

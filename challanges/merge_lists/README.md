@@ -1,16 +1,15 @@
 # Merge 2 Linked Lists 7/17/19
 
-
+Write a function that takes in two linked lists, and combines them into one before returning the head.
 
 ## Challenge
 
-Given a list and a value, insert the value in the middle of the list and return it.
+Given two passed in lists, reassign their pointers until there is one continuous list. Then, return a reference to the head of this new list.
 
 ## Approach & Efficiency
 
-While python has a native insert function, by avoiding it this solution is actually more efficient. It utilizes 2 slices, an append, and and an extend - all of which are O(k) where k == the number of the elements in the parameter(which are consistently at least half of the whole list). Insert on a list is O(n). While insert may be more convenient, a few more lines can save on time and space when it counts.
- [source](https://wiki.python.org/moin/TimeComplexity)
+In this challenge, I started off by creating two current nodes to keep track of the floating nodes and a runner to help reassign pointers across the list. I reassigned the head pointers before jumping into a while loop, which kept the runner and current's advancing until one of the lists runs out. Then, the head of the first list, now the head of the whole list, is returned. This will be O(n) time, and O(1) space!
 
 ## Solution
 
-![shift_array_whiteboard](../../assets/arrayShift.jpeg)
+![merge_lists](../../assets/merge_lists)
