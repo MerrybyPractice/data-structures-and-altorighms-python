@@ -4,5 +4,6 @@
   ],
   "python.testing.unittestEnabled": false,
   "python.testing.nosetestsEnabled": false,
-  "python.testing.pytestEnabled": true
+  "python.testing.pytestEnabled": true,
+  "python.pythonPath": "/Users/MaryCimakasky/.local/share/virtualenvs/data-structures-and-altorighms-python-BxwV4yuZ/bin/python"
 }

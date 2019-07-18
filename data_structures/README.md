@@ -57,10 +57,8 @@ Traverse a linked list and find the node that is k from the end. Return the valu
 
 ### Approach & Efficiency Of the Insertion Challenge for kth from the End Search
 
-While I recognize it is not the most efficient solution, when pondering this problem I came up with a way to solve it utilizing two loops. The first loop is a classic list traversal 
+While I recognize it is not the most efficient solution, when pondering this problem I came up with a way to solve it utilizing two loops. The first loop is a classic list traversal, with an added counter keeping track of the length. The second loop goes to the kth node from the end, and then pulls that value to return.
 
 ### Solution for kth from the End Search
 
-My partner for this challenge and I for this challenge each white-boarded out different functions, here is my solution to insert_after: 
-
-![white board for insert before](../../assets/kthFromTheEndSearch.jpg)
+![white board for kth from the end](../../assets/kthFromTheEndSearch.jpg)
