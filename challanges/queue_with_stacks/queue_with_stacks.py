@@ -7,23 +7,28 @@ class Pseudoqueue:
     self.front = Stack() 
 
   def enqueue(self, value):
+    print("pushing ", value)
     try: 
-      while self.front: 
-        moving_node = self.front.pop()
-        self.back.push(moving_node.value)
+      while self.front.top != None: 
+        self.back.push(self.front.pop())
+        # print('xxxx')
+        # print(self.back.top.value)
+        # print(self.back.top.next)
     except AttributeError: 
       print('Front is Empty')    
 
     self.back.push(value)
-    print("back top",self.back.top.value)
+    # print(self.back.top.value)
 
     try:
-      while self.back: 
-        moving_node = self.back.pop() 
-        self.front.push(moving_node.value)
-        print("front top",self.front.top.value)  
+      
+      while self.back.top != None: 
+        # print(self.back.top.value)
+        self.front.push(self.back.pop())
+        # print('-----------')
     except AttributeError: 
-      print('Back is Empty')    
+      print('Back is Empty')
+    # print('top: ', self.front.top.value)
 
   def dequeue(self): 
-    pass  
+   return self.front.pop()
