@@ -7,6 +7,7 @@ class Stack:
     self._list = LinkedList()
 
   def push(self, value): 
+    # print(f'adding {value} to a stack')
     self._list.insert(value)
 
     self.top = self._list.head
@@ -14,11 +15,11 @@ class Stack:
   def pop(self): 
     if self.top:
 
-      pop_node = self.top
+      pop_node = self._list.head
+  
+      self.top = self._list.head.next
 
-      self.top = self.top.next
-
-      pop_node.next = None
+      self._list.head = self._list.head.next
 
       return pop_node.value
 
