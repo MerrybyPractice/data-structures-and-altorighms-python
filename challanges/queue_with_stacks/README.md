@@ -12,4 +12,4 @@ As one of the methods on this challenge had to be O(n), I opted to make my enque
 
 ## Solution
 
-![psudoqueue](../../assets/psuedoque.jpeg)
+![pseudoqueue](../../assets/psuedoque.jpeg)
