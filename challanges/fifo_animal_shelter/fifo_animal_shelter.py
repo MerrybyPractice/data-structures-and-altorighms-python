@@ -21,9 +21,8 @@ class Animal_Shelter(object):
       else: 
         #if pref exsists, taking first
         return_value = current
-        return_value.next = None
         print(f'You have adopted {return_value.value.name} the {return_value.value.type}')
-        return return_value.value
+        return self.queue.dequeue()
       if current.next: 
         #if pref exsists, not taking first
           return_value = current.next.value
@@ -33,6 +32,5 @@ class Animal_Shelter(object):
     else: 
       #if no pref exsists, taking first
       return_value = current
-      return_value.next = None
       print(f'You have adopted {current.value.name} the {current.value.type}')
-      return current.value      
+      return self.queue.dequeue() 
