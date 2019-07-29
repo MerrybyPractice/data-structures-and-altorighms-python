@@ -17,7 +17,8 @@ class BinaryTree:
     def visit(node):
 
       if node.left: 
-        visit(node.left)
+        if node.left.value > node.value:
+          visit(node.left)
 
       results.append(node.value)
 
@@ -58,8 +59,54 @@ class BinaryTree:
       if node.right: 
         visit(node.right) 
 
-      results.appent(node.value) 
+      results.append(node.value) 
 
     visit(self.root) 
 
     return(results)      
+
+class BinarySearchTree(BinaryTree): 
+
+  def contains(self, value): 
+
+    def visit(node):
+
+      if value == node.value: 
+        return True
+
+      if node.left:  
+       if visit(node.left) == True: 
+         return True
+
+
+      if node.right: 
+        if visit(node.right) == True:
+          return True
+      return False   
+    return visit(self.root)
+
+      
+
+  def add(self, value): 
+
+    def visit(node): 
+
+      if value == node.value: 
+        return "Value is already in this list" 
+
+      if value > node.value: 
+        if node.right: 
+          return visit(node.right)
+        else: 
+          node.right = Node(value)  
+          return f"Node with a value of {value} has been added" 
+
+      if value < node.value: 
+        if node.left: 
+          return visit(node.left) 
+        else: 
+          node.left = Node(value) 
+          return f"Node with a value of {value} has been added"     
+
+    return visit(self.root)      
+
