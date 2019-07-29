@@ -33,7 +33,7 @@ def test_no_pref_dequeue():
 
   assert shelter.fifo_animal_dequeue() == dog
 
-@pytest.skip('Not passing yet, issues with reassigning pointers in dequeue')
+@pytest.mark.skip('Not passing yet, issues with reassigning pointers in dequeue')
 def test_dequeue_multiple(): 
   shelter = Animal_Shelter() 
 
