@@ -1,3 +1,5 @@
+from data_structures.stacks_and_queues.stacks_and_queues import Queue
+
 class Node: 
 
   def __init__(self, value): 
@@ -63,7 +65,28 @@ class BinaryTree:
 
     visit(self.root) 
 
-    return(results)      
+    return(results)    
+
+  def breadth_traversal(self): 
+
+      queue = Queue()
+
+      queue.enqueue(self.root)
+
+      list = []
+
+      while queue.front: 
+
+        dequeue = queue.dequeue() 
+
+        queue.enqueue(dequeue.left) 
+        queue.enqueue(dequeue.right) 
+
+        print(dequeue.value)
+        list.append(dequeue.value)
+        
+      return list  
+
 
 class BinarySearchTree(BinaryTree): 
 

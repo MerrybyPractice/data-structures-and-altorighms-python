@@ -1,6 +1,7 @@
 from tree import Node
 from tree import BinaryTree
 from tree import BinarySearchTree
+
 import pytest 
 
 @pytest.fixture
@@ -69,4 +70,8 @@ def test_add(ent):
 def test_add_already_here(ent): 
 
   assert ent.add(14) == "Value is already in this list"
+
+def test_breadth_first(ent): 
+
+  assert ent.breadth_first() == []
   
