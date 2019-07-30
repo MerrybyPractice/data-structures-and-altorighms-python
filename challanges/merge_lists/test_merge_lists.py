@@ -2,7 +2,9 @@ from data_structures.linked_list.linked_list import LinkedList
 from .merge_lists import merge_lists
 import pytest
 
-@pytest.mark.skip('refactor')
+
+@pytest.mark.skip('not passing, will refactor')
+
 def test_merge_lists(): 
 
   ll_1 = LinkedList() 
