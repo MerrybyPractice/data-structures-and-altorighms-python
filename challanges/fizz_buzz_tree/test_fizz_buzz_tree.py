@@ -39,6 +39,35 @@ def happy_path():
 # root right left child 
   bt.root.right.left.left = Node(12)  
   bt.root.right.left.right = Node(14)
+  Fizz_Buzz_Tree(bt)
+  return bt
+
+@pytest.fixture
+def all_threes(): 
+  bt = BinaryTree() 
+
+  bt.root = Node(9) 
+
+  bt.root.right = Node(15)
+  bt.root.left = Node(3)
+  bt.root.right.right = Node(18)
+  bt.root.right.left = Node(12)
+  bt.root.left.right = Node(6)
+
+  return bt
+
+@pytest.fixture
+def all_fives(): 
+  bt = BinaryTree() 
+
+  bt.root = Node(20) 
+
+  bt.root.right = Node(30)
+  bt.root.left = Node(15)
+  bt.root.right.right = Node(35)
+  bt.root.right.left = Node(25)
+  bt.root.left.left = Node(10)
+  bt.root.left.left.left = Node(5)
 
   return bt
 
@@ -61,7 +90,34 @@ def test_happy_path_buzz(happy_path):
 def test_happy_path_neither(happy_path): 
   
   assert happy_path.root.right.left.right.value == 14
+def test_all_threes(all_threes): 
+  Fizz_Buzz_Tree(all_threes) 
 
+  assert all_threes.root.value == "Fizz" 
+  assert all_threes.root.right.value == "FizzBuzz"
+  assert all_threes.root.left.value == "Fizz"
+  assert all_threes.root.right.right.value == "Fizz"
+  assert all_threes.root.right.left.value == "Fizz"
+  assert all_threes.root.left.right.value == "Fizz"
+
+def test_all_fives(all_fives): 
+
+  Fizz_Buzz_Tree(all_fives)
+
+  assert all_fives.root.value == "Buzz" 
+  assert all_fives.root.right.value == "FizzBuzz"
+  assert all_fives.root.left.value == "FizzBuzz"
+  assert all_fives.root.right.right.value == "Buzz"
+  assert all_fives.root.right.left.value == "Buzz"
+  assert all_fives.root.left.left.value == "Buzz"
+  assert all_fives.root.left.left.left.value == "Buzz"
+
+def test_empty(): 
+
+  bt = BinaryTree() 
+
+  with pytest.raises(AttributeError):
+    assert Fizz_Buzz_Tree(bt) == None
 
 
 
