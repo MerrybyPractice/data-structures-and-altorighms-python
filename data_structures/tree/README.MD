@@ -17,7 +17,12 @@ After writing my recursive traversals for the binary tree, I opted to base every
     - In_Order_Traversal() 
     - Post_Order_Traversal() 
     - Pre_Order_Traversal()
+    - Breadth_Traversal()
 * Binary Search Tree
   - BinarySearchTree() 
     - Contains() 
     - Add()    
+
+### Breadth Traversal Whiteboard
+
+    ![Breadth Traversal](../../assets/breadth_first_traversal.jpeg) 
