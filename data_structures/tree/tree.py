@@ -86,7 +86,6 @@ class BinarySearchTree(BinaryTree):
     return visit(self.root)
 
       
-
   def add(self, value): 
 
     def visit(node): 
