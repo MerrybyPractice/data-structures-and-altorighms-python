@@ -1,4 +1,4 @@
-from data_structures.stacks_and_queues.stacks_and_queues import Queue
+from queue import Queue
 
 class Node: 
 
@@ -71,20 +71,22 @@ class BinaryTree:
 
       queue = Queue()
 
-      queue.enqueue(self.root)
-
+      if self.root:
+        queue.put(self.root)
+    
       list = []
 
-      while queue.front: 
-
-        dequeue = queue.dequeue() 
-
-        queue.enqueue(dequeue.left) 
-        queue.enqueue(dequeue.right) 
-
+      while not queue.empty(): 
+        dequeue = queue.get() 
+        
+        if dequeue.left: 
+          queue.put(dequeue.left) 
+        if dequeue.right:  
+          queue.put(dequeue.right) 
+        
         print(dequeue.value)
         list.append(dequeue.value)
-        
+
       return list  
 
 

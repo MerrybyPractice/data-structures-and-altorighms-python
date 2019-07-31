@@ -53,13 +53,13 @@ class Queue:
   def dequeue(self): 
     if self.front: 
 
-      dequeue_node = self.front
+      dequeue_val = self.front.value
 
       self.front = self.front.next 
 
-      dequeue_node.next = None 
+      # dequeue_node.next = None 
 
-      return dequeue_node.value
+      return dequeue_val
 
     else: 
 
