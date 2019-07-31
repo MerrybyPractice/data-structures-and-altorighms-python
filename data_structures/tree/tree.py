@@ -1,3 +1,5 @@
+from queue import Queue
+
 class Node: 
 
   def __init__(self, value): 
@@ -63,7 +65,30 @@ class BinaryTree:
 
     visit(self.root) 
 
-    return(results)      
+    return(results)    
+
+  def breadth_traversal(self): 
+
+      queue = Queue()
+
+      if self.root:
+        queue.put(self.root)
+    
+      list = []
+
+      while not queue.empty(): 
+        dequeue = queue.get() 
+        
+        if dequeue.left: 
+          queue.put(dequeue.left) 
+        if dequeue.right:  
+          queue.put(dequeue.right) 
+        
+        print(dequeue.value)
+        list.append(dequeue.value)
+
+      return list  
+
 
 class BinarySearchTree(BinaryTree): 
 
