@@ -34,17 +34,31 @@ And thats it, a basic physical representation of insertion sort. You simply keep
 
 ### So, when to insert?
 
+Insertion sorts perform best with with smaller data sets that are coming in partially sorted. It may also be a good choice when you require an in-place sort, or a stable sort -- depending on other constraints of course.
 
+Space Complexity: O(1)
+Time Complexity: O(N^2)
 
 ### Should this Algorithm be stable?
 
+So, what is a stable algorithm and why do I care? In a stable sort, identical values are not swapped when encountered. In an unstable sort they are. Fundamentally, it is typically an efficiency thing. You do not want to be taking additional steps you do not need to get the same result. However, there may be other considerations that will favor a stable sort over an unstable one.
+
 ## Diagram
 
-Include your “Visual” here
+[VisualAlgo Insertion Sort](https://visualgo.net/bn/sorting?slide=8)
+
+![Tonal Insertion Sort from Timo Bingmann](https://www.youtube.com/watch?v=8oJS1BMKE64)
 
 ## Algorithm
 
-Describe in detail how the algorithm works. Include small code snippets to possibly support the points
+  1. Instantiate a key holding variable
+  2. Select the left most unsorted element as a key
+  3. Move your key to the sorted sub-collection, ie. the left most portion of the array. 
+  4. Reassign the key as the next left most unsorted element. 
+  5. Check where in the sorted sub-collection the key would fit. 
+    * Starting from the right, see if the key is larger than or smaller than each element in the sorted sub-collection. 
+    * When you find where it fits, insert the key value there, shifting the rest. 
+  6. Perform 4-5 until entire array is sorted.  
 
 ## Pseudocode
 
@@ -52,14 +66,15 @@ Describe in detail how the algorithm works. Include small code snippets to possi
 
 ### Watch
 
-### Video
+[AlgoRythmics performs the Insertion Sort](https://www.youtube.com/watch?v=ROalU379l3U)
+[Geeks for Geeks Insertion Sort](https://www.youtube.com/watch?v=OGzPmgsI-pQ)
 
 ### Read
 
 [Khan Academy Insertion Sort](https://www.khanacademy.org/computing/computer-science/algorithms/insertion-sort/a/insertion-sort)
 [Study Tonight Insertion Sort](https://www.studytonight.com/data-structures/insertion-sorting)
 
-Article 2
+
 ### Bookmark
 
 [HackerEarth Insertion Sort Visualizer](https://www.hackerearth.com/practice/algorithms/sorting/insertion-sort/visualize/)
