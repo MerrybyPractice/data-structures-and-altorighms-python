@@ -11,4 +11,4 @@ My initial approach utilized the python intersection method. This has thus far p
 
 ## Solution
 
-![intersection_of_trees](../../assets/left_join.jpeg)
+![left Join](../../assets/left_join.jpeg)
