@@ -1,4 +1,4 @@
-# Intersection of Two Binary Trees 8/21/19
+# Intersection of Two Binary Trees 8/20/19
 
 
 ## Challenge
