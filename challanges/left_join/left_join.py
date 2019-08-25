@@ -2,39 +2,15 @@ from data_structures.hashtable.hashtable import Hashtable
 
 def left_join(h1, h2): 
 
-  lst_1 = pull_from_lst(h1)
-  lst_2 = pull_from_lst(h2)
+  return_list = [] 
 
-  return lst_1 & lst_2
+  for word in h1: 
 
+    entry = [word, h1[word], h2.get(word)]
 
-def pull_from_lst(ht): 
-  lst = [] 
+    return_list.append(entry)
 
-  for item in ht.buckets: 
-
-    if item.head: 
-      
-      pull_from_ll(ht, lst)
-
-    else: 
-      lst.append(item.head.value)
-
-
-def pull_from_ll(ht, lst):
-  
-  current = ht.buckets.head
-
-  while current: 
-
-    if current.value['key']: 
-      lst.append(current.value)
-
-    current = current.next  
-
-  return lst  
-  
-
+  return return_list
 
   
 
