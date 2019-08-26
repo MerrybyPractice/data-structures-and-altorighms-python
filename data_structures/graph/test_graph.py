@@ -97,5 +97,19 @@ def test_looping():
 
   assert [vrtx.value for vrtx in vrtxs] == ['one']
 
+def test_breadth_first(): 
+  g = Graph() 
 
+  one = g.add_vertex('1')
+  two = g.add_vertex('2') 
+  three = g.add_vertex('3') 
+  g.add_edge(one, two, 34) 
+  g.add_edge(one, three, 17)
+
+  operate = []
+  def operation(current): 
+    operate.append(current.value)
+  g.breadth_first(one, operation)
+  assert operate == ['1', '2', '3']
+  
 

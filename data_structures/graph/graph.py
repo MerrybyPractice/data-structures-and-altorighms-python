@@ -1,3 +1,5 @@
+from collections import deque
+
 class Graph: 
 
   def __init__(self): 
@@ -18,6 +20,27 @@ class Graph:
   def get_neghibors(self, vertex): 
     return vertex.neghibors
 
+  def breadth_first(self, root, operation):   
+    q = deque()
+
+    q.appendleft(root) 
+
+    to_reset = set()
+
+    while q: 
+      current = q.pop()
+      current.visited = True
+      to_reset.add(current)
+
+      operation(current)
+
+      for edge in current.neghibors: 
+        if not edge.vertex.seen: 
+          q.appendleft(edge.vertex)
+
+    for vertex in to_reset: 
+      vertex.visited = False
+
   def __len__(self): 
     return len(self._vertices)  
 
@@ -30,3 +53,4 @@ class Vertex:
   def __init__(self, value): 
     self.value = value
     self.neghibors = []
+    self.seen = False
