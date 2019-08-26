@@ -13,12 +13,14 @@ class Graph:
   def add_edge(self, vrtx1, vrtx2, weight=0):
     if vrtx1 in self._vertices and vrtx2 in self._vertices:
       vrtx1.neghibors.append(Edge(vrtx2, weight))   
+    else: 
+      return None  
 
   def get_vertices(self): 
     return self._vertices or None   
 
   def get_neghibors(self, vertex): 
-    return vertex.neghibors
+    return vertex.neghibors or None
 
   def breadth_first(self, root, operation):   
     q = deque()
