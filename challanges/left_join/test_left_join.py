@@ -11,4 +11,4 @@ def test_left_join():
   h2.add("2",2)
   h2.add("4",4)
 
-  assert left_join(h1, h2) == [{2,2}]
+  assert left_join(h1, h2) == [['3', 3, None], ['2', 2, 2]]

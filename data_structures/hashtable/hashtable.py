@@ -6,7 +6,21 @@ class Hashtable:
 
     self.buckets = [ll() for i in range(1024)]
 
+  def __iter__(self): 
+    print(len(self.buckets))
+    for i in self.buckets: 
+      # print('coo2')
+      for current in i: 
+        
+        yield current['key']
+            
+
+  def __getitem__(self, key):  
+    
+    return self.get(key)
+
   def hash(self, key): 
+    print(type(key), key)
     unicode_sum = sum([ord(char) for char in key])
 
     prime = 997
@@ -16,7 +30,7 @@ class Hashtable:
     return idx
 
   def add(self, key, value): 
-
+    
     idx = self.hash(key)
 
     bucket = self.buckets[idx] 
@@ -24,7 +38,7 @@ class Hashtable:
     bucket.insert({'key': key, 'value': value})
 
   def get(self, key): 
-
+    
     idx = self.hash(key) 
 
     bucket = self.buckets[idx]  
