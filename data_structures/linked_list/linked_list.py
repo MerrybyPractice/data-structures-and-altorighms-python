@@ -3,6 +3,13 @@ class LinkedList:
   def __init__(self): 
     self.head = None
 
+  def __iter__(self): 
+    current = self.head
+
+    while current: 
+      yield current.value
+      current = current.next  
+
   def insert(self, value):
     self.head = Node(value, next = self.head) 
 
