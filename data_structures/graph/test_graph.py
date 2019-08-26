@@ -58,10 +58,13 @@ def test_add_edge():
   one = g.add_vertex('1')
   two = g.add_vertex('2')
   g.add_edge(one, two, 7) 
+  
+  one_two_edge = one.neghibors[0]
 
-  assert True
+  assert one_two_edge.vertex == two
+  assert one_two_edge.weight == 7
+  assert len(two.neghibors) == 0
 
-@pytest.mark.skip('not ready')
 def test_get_neghiboring_vertices(): 
   g = Graph() 
 
@@ -69,13 +72,30 @@ def test_get_neghiboring_vertices():
   two = g.add_vertex('2') 
   three = g.add_vertex('3') 
   g.add_edge(one, two, 34) 
-  g.add_edge(three, one, 17) 
+  g.add_edge(one, three, 17) 
+
+  neghibors = g.get_neghibors(one)
 
   assert neghibors[0].vertex.value == '2' 
   assert neghibors[0].weight == 34
 
-  assert neghibors[1].vertex.value == '1' 
+  assert neghibors[1].vertex.value == '3' 
   assert neghibors[1].weight == 17  
+
+def test_looping(): 
+  g = Graph()
+
+  one = g.add_vertex('one')
+  g.add_edge(one, one)
+
+  neghibors = g.get_neghibors(one)
+
+  assert neghibors[0].vertex.value == 'one'
+  assert neghibors[0].weight == 0
+
+  vrtxs = g.get_vertices()
+
+  assert [vrtx.value for vrtx in vrtxs] == ['one']
 
 
 
