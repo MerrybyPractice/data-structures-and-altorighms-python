@@ -130,4 +130,4 @@ def test_depth_first():
   g.depth_first(one, operation)
   assert operate == ['1', '3', '2', '4']
   
-
+      
