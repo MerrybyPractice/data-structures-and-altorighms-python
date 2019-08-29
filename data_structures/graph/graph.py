@@ -1,4 +1,5 @@
 from collections import deque
+from data_structures.stacks_and_queues.stacks_and_queues import Stack
 
 class Graph: 
 
@@ -42,6 +43,27 @@ class Graph:
 
     for vertex in to_reset: 
       vertex.visited = False
+
+  def depth_first(self, root, operation): 
+    s = Stack() 
+
+    s.push(root)
+
+    to_reset = set() 
+
+    while s.peek(): 
+      current = s.pop() 
+      current.visited = True
+      to_reset.add(current)
+
+      operation(current)
+
+      for edge in current.neghibors: 
+        if not edge.vertex.seen: 
+          s.push(edge.vertex)
+
+    for vertex in to_reset: 
+      vertex.visited = False      
 
   def __len__(self): 
     return len(self._vertices)  

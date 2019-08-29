@@ -7,14 +7,26 @@ def direct_path(g, lst):
   previous_node = None
 
   while lst: 
-    for vert in g.vertices: 
-      if lst[0] == vert.value: 
-        current_node = vert
-        previous_node = lst.pop(0)
+    for vert in g._vertices: 
+      if lst: 
+        if lst[0] == vert.value: 
+          current_node = vert
+          previous_node = lst.pop(0)
 
+    found = False
     for item in lst: 
-        if item in current_node.neghibors.value: 
-          total_edge_weight = total_edge_weight + current_node.neghibors.weight 
-        else: 
-          return [False, 0]  
-  return [True, total_edge_weight]        
+      #vertex_lst = []
+      for edge in current_node.neghibors:
+        if item == edge.vertex.value: 
+          total_edge_weight = total_edge_weight + edge.weight 
+          found = True
+          break
+
+    if not found:
+      return [False, 0] 
+
+  if found: 
+    return [True, total_edge_weight]
+      
+   
+          
