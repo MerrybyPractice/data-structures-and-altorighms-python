@@ -111,5 +111,23 @@ def test_breadth_first():
     operate.append(current.value)
   g.breadth_first(one, operation)
   assert operate == ['1', '2', '3']
-  
 
+def test_depth_first(): 
+  g = Graph() 
+
+  one = g.add_vertex('1')
+  two = g.add_vertex('2') 
+  three = g.add_vertex('3') 
+  four = g.add_vertex('4')
+  
+  g.add_edge(one, two, 34) 
+  g.add_edge(one, three, 17)
+  g.add_edge(two, four, 78)
+
+  operate = []
+  def operation(current): 
+    operate.append(current.value)
+  g.depth_first(one, operation)
+  assert operate == ['1', '3', '2', '4']
+  
+      

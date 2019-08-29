@@ -35,13 +35,18 @@ Big 0: O(1) for time and space
 
 Big O: O(1) for time and space
 
-- breadth_first: this traverses the graph performs a passed in operation on each node in breadth_first order.
+- breadth_first: this traverses the graph and performs a passed in operation on each node encountered in breadth_first order.
 
-Big O: without taking into consideration the passed in function, which will have its own complexity implications, the time complexity of this is O(n2), and space is of O(n).
+Big O: without taking into consideration the passed in function, which will have its own complexity implications, the time complexity of this is O(n2), and space is O(n).
+
+- depth_first: this traverses the graph and performs a passed in operation on each node encountered in depth_first order. 
+
+Big O: without taking into the passed in function into consideration, the time complexity of this is O(n2), and space is O(n)
 
 - _len_: this class has a custom len method which returns the length of self._vertices
 
 Big O: O(1) for time and length - given that this uses the native length method on lists.
+
 
 ## class Edge
 

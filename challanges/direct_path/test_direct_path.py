@@ -5,7 +5,8 @@ from challanges.direct_path.direct_path import direct_path
 @pytest.fixture
 def path_map(): 
   g = Graph()
-  print(type(path_map.g))
+  
+  print(type(g))
 
   a = g.add_vertex('a')
   b = g.add_vertex("b")
@@ -29,8 +30,10 @@ def path_map():
   g.add_edge(d, e, 4)
   g.add_edge(e, d, 4)
 
+  return g
+
 def test_direct_path(path_map): 
 
   lst = ['c', 'b', 'e']
   
-  assert direct_path(grph, lst) == [True, 5]
+  assert direct_path(path_map, lst) == [True, 5]
